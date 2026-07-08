@@ -1,5 +1,6 @@
 import { Alert, Skeleton } from "antd";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../api/config";
 import { useTools } from "../hooks/useTools";
 import { useAuth } from "../auth/AuthProvider";
 import BrandButton from "../components/BrandButton";
@@ -51,7 +52,7 @@ export default function ToolsHomePage() {
             type="error"
             showIcon
             message="Couldn't load the tools"
-            description="Make sure the backend is running on http://localhost:8000."
+            description={`The tools API at ${API_BASE_URL} didn't respond. Please try again shortly.`}
           />
         )}
 

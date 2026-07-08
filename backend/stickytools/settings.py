@@ -92,7 +92,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
 ]
 
-# Deployed frontend (e.g. the Vercel URL), set via env.
+# Any Vercel deployment of the frontend (production + previews).
+CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.vercel\.app$"]
+
+# Custom domain for the frontend, set via env when there is one.
 FRONTEND_ORIGIN = os.environ.get("FRONTEND_ORIGIN")
 if FRONTEND_ORIGIN:
     CORS_ALLOWED_ORIGINS.append(FRONTEND_ORIGIN)
