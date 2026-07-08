@@ -7,6 +7,8 @@ export const brand = {
   ink: "#1e1c1d",
   maroon: "#531c1c",
   maroonDark: "#3d1212",
+  green: "#1c4c4d",
+  greenLight: "#b6d298",
 };
 
 export const theme: ThemeConfig = {
