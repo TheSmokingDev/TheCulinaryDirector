@@ -1,0 +1,37 @@
+# Render Blueprint — Django backend only (frontend deploys to Vercel).
+# Everything on the free tier: web service spins down after 15 min of
+# inactivity (first request after that takes ~1 min), and the free
+# Postgres instance expires 30 days after creation unless upgraded.
+databases:
+  - name: stickytools-db
+    plan: free
+
+services:
+  - type: web
+    name: stickytools-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    # Migrations + seed run in the build because preDeployCommand
+    # isn't available on free instances.
+    buildCommand: >-
+      pip install -r requirements.txt &&
+      python manage.py collectstatic --noinput &&
+      python manage.py migrate &&
+      python manage.py seed_tools
+    startCommand: gunicorn stickytools.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: stickytools-db
+          property: connectionString
+      # Set this to the deployed frontend URL (no trailing slash),
+      # e.g. https://stickydatestools.vercel.app
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.12.7
