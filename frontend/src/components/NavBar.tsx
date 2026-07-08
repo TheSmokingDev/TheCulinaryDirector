@@ -10,7 +10,7 @@ const NAV_LINKS = [
 ];
 
 const linkClass =
-  "brand-label text-xs text-cream/90 transition-colors hover:text-green-light";
+  "brand-label text-xs !text-white transition-colors hover:!text-green-light";
 
 export default function NavBar() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -25,7 +25,7 @@ export default function NavBar() {
             alt="The Culinary Group logo"
             className="h-9 w-auto"
           />
-          <span className="brand-label text-sm text-cream">
+          <span className="brand-label text-sm text-white">
             The Culinary Group
             <span className="ml-2 text-green-light">Tools</span>
           </span>
@@ -67,7 +67,7 @@ export default function NavBar() {
           ) : (
             <Link
               to="/login"
-              className="brand-label border border-cream/70 px-5 py-2 text-xs !text-cream transition-colors hover:border-green-light hover:!text-green-light"
+              className="brand-label border border-white/80 px-5 py-2 text-xs !text-white transition-colors hover:border-green-light hover:!text-green-light"
             >
               Log in
             </Link>
