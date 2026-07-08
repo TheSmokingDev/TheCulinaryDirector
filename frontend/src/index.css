@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f2ede6;
+  --color-cream-light: #faf7f2;
+  --color-sand: #d9d1c7;
+  --color-ink: #1e1c1d;
+  --color-maroon: #531c1c;
+  --color-maroon-dark: #3d1212;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Uppercase letter-spaced label used for nav links, kickers and CTAs */
+.brand-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
