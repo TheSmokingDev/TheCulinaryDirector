@@ -21,7 +21,7 @@ export const theme: ThemeConfig = {
     colorLinkHover: brand.maroon,
     colorLinkActive: brand.maroonDark,
     borderRadius: 2,
-    fontFamily: '"Jost", ui-sans-serif, system-ui, sans-serif',
+    fontFamily: '"Manrope", ui-sans-serif, system-ui, sans-serif',
     fontSize: 15,
   },
   components: {

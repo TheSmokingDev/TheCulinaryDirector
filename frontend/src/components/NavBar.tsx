@@ -18,9 +18,11 @@ export default function NavBar() {
     <header className="sticky top-0 z-20 border-b border-sand bg-cream/95 backdrop-blur">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center bg-maroon text-lg font-semibold text-white">
-            G
-          </span>
+          <img
+            src="/logo-mark.webp"
+            alt="The Culinary Group logo"
+            className="h-9 w-auto"
+          />
           <span className="brand-label text-sm text-ink">
             The Culinary Group
             <span className="ml-2 text-maroon">Tools</span>

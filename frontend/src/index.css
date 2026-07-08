@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Brand label/nav font from theculinarygroup.com.au */
+@font-face {
+  font-family: "Nord Book";
+  src: url("/fonts/nord-book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-cream: #f2ede6;
   --color-cream-light: #faf7f2;
@@ -7,7 +16,9 @@
   --color-ink: #1e1c1d;
   --color-maroon: #531c1c;
   --color-maroon-dark: #3d1212;
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-label: "Nord Book", Arial, sans-serif;
 }
 
 body {
@@ -17,9 +28,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Headings use the site's serif at its single (regular) weight. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
 /* Uppercase letter-spaced label used for nav links, kickers and CTAs */
 .brand-label {
+  font-family: var(--font-label);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-weight: 500;
+  font-weight: 400;
 }
